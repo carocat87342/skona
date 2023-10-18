@@ -1,0 +1,62 @@
+{
+    "xlarge breakpoint": {
+        "scope": "scss",
+        "prefix": "@x",
+        "body": [
+            "@include xlarge {",
+            "    $1",
+            "}"
+        ],
+        "description": "Include xlarge breakpoint"
+    },
+    "desktop breakpoint": {
+        "scope": "scss",
+        "prefix": "@d",
+        "body": [
+            "@include desktop {",
+            "    $1",
+            "}"
+        ],
+        "description": "Include desktop breakpoint"
+    },
+    "desktop-tablet breakpoint": {
+        "scope": "scss",
+        "prefix": "@dt",
+        "body": [
+            "@include desktop-tablet {",
+            "    $1",
+            "}"
+        ],
+        "description": "Include desktop-tablet breakpoint"
+    },
+    "tablet breakpoint": {
+        "scope": "scss",
+        "prefix": "@t",
+        "body": [
+            "@include tablet {",
+            "    $1",
+            "}"
+        ],
+        "description": "Include tablet breakpoint"
+    },
+    "tablet-mobile breakpoint": {
+        "scope": "scss",
+        "prefix": "@tm",
+        "body": [
+            "@include tablet-mobile {",
+            "    $1",
+            "}"
+        ],
+        "description": "Include tablet-mobile breakpoint"
+    },
+    "mobile breakpoint": {
+        "scope": "scss",
+        "prefix": "@m",
+        "body": [
+            "@include mobile {",
+            "    $1",
+            "}"
+        ],
+        "description": "Include mobile breakpoint"
+    },
+}

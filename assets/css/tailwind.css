@@ -1,0 +1,70 @@
+@import './palette.css'; /* Our custom palette */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  html,
+  body {
+    @apply font-museo-sans text-base font-light text-almost bg-white leading-normal;
+  }
+
+  body.has-nav-open {
+   overflow: hidden;
+  }
+}
+
+@layer components {
+  .text-subheader {
+    @apply font-light text-p-mob sm:text-p-tab lg:text-p-desk;
+  }
+  .text-highlighted {
+    @apply font-light text-p-mob sm:text-p-tab lg:text-p-desk mb-2.5;
+  }
+
+  .text-content p:not(:last-child),
+  .text-content ul:not(:last-child),
+  .text-content ol:not(:last-child),
+  .text-content-top:not(:last-child) {
+    @apply mb-mobile-md sm:mb-tablet-md lg:mb-desktop-md;
+  }
+  .text-content h1,
+  .text-content h2,
+  .text-content h3,
+  .text-content h4 {
+    @apply font-kepler-std-display font-black leading-heading mb-2.5;
+  }
+  .text-content h1 {
+    @apply text-h1-mob sm:text-h1-tab lg:text-h1-desk;
+  }
+  .text-content h2 {
+    @apply text-h2-mob sm:text-h2-tab lg:text-h2-desk;
+  }
+  .text-content h3 {
+    @apply text-h3-mob sm:text-h3-tab lg:text-h3-desk;
+  }
+  .text-content h4 {
+    @apply text-h4-desk;
+  }
+  .text-content ul,
+  .text-content ol {
+    @apply list-outside pl-[16px];
+  }
+  .text-content ul {
+    @apply list-disc;
+  }
+  .text-content ol {
+    @apply list-decimal;
+  }
+  .text-content ul li,
+  .text-content ol li {
+    @apply mb-1.5;
+  }
+  .text-content a {
+    @apply text-big-blue underline hover:no-underline;
+  }
+
+  .text-content iframe {
+    max-width: 100% !important;
+  }
+}

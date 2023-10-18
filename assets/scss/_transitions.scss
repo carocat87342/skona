@@ -1,0 +1,40 @@
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 200ms;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+
+.case-study, .post-card {
+  .categories-scope {
+    .cs-scope-img {
+      animation: translate-top-in 0.6s, easeInOutQuint cubic-bezier(0.83, 0, 0.17, 1);
+      transform: translateY(-210px);
+      @include xlarge {
+        transform: translateY(-300px);
+      }
+    }
+  }
+  &:hover {
+    .categories-scope {
+      .cs-scope-img {
+        animation: translate-top-out 0.6s, easeInOutQuint cubic-bezier(0.83, 0, 0.17, 1);
+        transform:translateY(0);
+      }
+    }
+  }
+}
+
+@keyframes translate-top-in { 0%   { transform:translateY(0); } 100% { transform:translateY(-210px); } }
+
+@keyframes translate-top-out { 0%   { transform:translateY(210px); } 100% { transform:translateY(0); } }
+
+@include xlarge {
+  @keyframes translate-top-in { 0%   { transform:translateY(0); } 100% { transform:translateY(-300px); } }
+
+  @keyframes translate-top-out { 0%   { transform:translateY(300px); } 100% { transform:translateY(0); } }
+}
+
+

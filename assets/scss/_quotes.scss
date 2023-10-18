@@ -1,0 +1,204 @@
+.quotes-container {
+  background-color: var(--bi-coastal-default);
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    background-image: url('/images/quotes-shape.png');
+    @include mobile {
+      background-size: cover;
+    }
+  }
+
+  .swiper-slider {
+    // height: 480px;
+
+    .swiper-container {
+      &.swiper {
+
+        .swiper-slide {
+          background-size: cover;
+          background-position: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          color: #ffffff;
+          box-sizing: border-box;
+          background-color: transparent;
+          text-align: center;
+          // padding-top: 50px;
+
+          .title {
+            font-family: KeplerStd;
+            font-weight: 900;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.2;
+          }
+        }
+
+        &.gallery-top {
+          max-width: 100%;
+        }
+
+        &.gallery-thumbs {
+          height: 50%;
+          box-sizing: border-box;
+          padding: 50px 0;
+
+          .swiper-wrapper {
+            @media screen and (min-width: 1024px) {
+              transform: none !important;
+              transition-duration: unset !important;
+            }
+
+            .swiper-slide {
+              opacity: 1;
+            }
+
+            .swiper-slide-active {
+              opacity: 1;
+            }
+          }
+        }
+
+        .swiper-pagination-fraction {
+          position: absolute;
+          z-index: 9999999;
+          color: #ffffff;
+
+          .swiper-button-prev {
+            left: unset !important;
+            &:after {
+              font-size: 15px;
+            }
+          }
+          .swiper-button-next {
+            right: unset !important;
+            left: 45px;
+            &:after {
+              font-size: 15px;
+            }
+          }
+          @media screen and (max-width: 1023px) {
+            .swiper-button-prev, .swiper-button-next {
+              top: 75% !important;
+            }
+          }
+          .slider-counter {
+            margin-left: 25px;
+            margin-top: 20px;
+          }
+          .swiper-progress-bar {
+            position: relative;
+            width: 100%;
+            display: block;
+            z-index: 1;
+            height: 2px;
+            background: #979797;
+            margin-top: 10px;
+
+            .slide_progress-bar {
+              // position: absolute;
+              height: 2px;
+              background: rgba(255, 255, 255, 0.3);
+              width: auto;
+              clear: both;
+              opacity: 0;
+              bottom: 45px;
+              left: 0;
+              right: 0;
+              &:after {
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: #ffffff;
+                height: 100%;
+                width: 0;
+                content: "";
+              }
+            }
+            &.active {
+              .slide_progress-bar {
+                opacity: 1;
+              }
+            }
+            &.animate {
+              .slide_progress-bar {
+                &:after {
+                  transition: width linear;
+                  transition-delay: unset;
+                  width: 100%;
+                  transition-duration: 5s;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .gallery-thumbs {
+
+      .logos {
+        width: 25%;
+        height: auto;
+        @include mobile {
+          width: 50%;
+        }
+        img {
+          max-width: 130px;
+          display: block;
+          margin: auto;
+        }
+      }
+    }
+  }
+
+  .floatTitle {
+    animation: floatTitle 0.4s, easeInOutQuint cubic-bezier(0.83, 0, 0.17, 1);;
+  }
+  .floatSpeakerText {
+    animation: floatSpeakerText 1s;
+  }
+  .quote-speaker {
+    overflow: hidden;
+    .quoteSpeakerText {
+      margin-left: 5px;
+    }
+  }
+}
+@-webkit-keyframes floatTitle {
+  from {
+    right: 0%;
+    opacity: 1;
+  }
+
+  to {
+    right: 100%;
+    opacity: 0;
+  }
+}
+@-webkit-keyframes floatSpeakerText {
+  from {
+    margin-left: 0px;
+  }
+
+  to {
+    margin-left: -300px;
+  }
+}
+
+.split-line {
+  overflow: hidden;
+}
+.lineParent{
+  overflow: hidden;
+  font-kerning: none;
+  line-height:inherit;
+}
